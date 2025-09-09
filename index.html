@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dott. Roberto Soave – Dietista Nutrizionista – Consulenze Personalizzate</title>
-  <meta name="description" content="Piani alimentari personalizzati, nutrizione sportiva ed educazione alimentare a Roma. Consulenze in studio e online." />
+  <title>Dott. Roberto Soave – Dietista Nutrizionista – Piani nutrizionali a Roma Prati</title>
+  <meta name="description" content="Consulenze nutrizionali personalizzate a Roma (Prati): perdita di peso, salute metabolica, nutrizione sportiva. Prenota online o chiama 338 280 9121." />
   <link rel="canonical" href="https://TUO-DOMINIO-O-GITHUB-PAGES/" />
   <meta property="og:title" content="Dott. Roberto Soave – Dietista Nutrizionista" />
   <meta property="og:description" content="Piani su misura per i tuoi obiettivi. Prenota una consulenza." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/cover.jpg" />
   <meta name="theme-color" content="#0e7a6d" />
+  <link rel="preload" as="image" href="images/cover.webp" imagesrcset="images/cover.webp 1200w, images/cover.jpg 1200w" />
 
-  <!-- JSON-LD -->
+  <!-- JSON-LD Business -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,6 +30,28 @@
       "addressCountry": "IT"
     },
     "url": "https://TUO-DOMINIO-O-GITHUB-PAGES/"
+  }
+  </script>
+
+  <!-- JSON-LD FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question","name":"Fate consulenze online?",
+        "acceptedAnswer":{"@type":"Answer","text":"Sì, tramite videochiamata. Il percorso e il monitoraggio sono identici alla visita in studio."}
+      },
+      {
+        "@type":"Question","name":"Ogni quanto avvengono i follow-up?",
+        "acceptedAnswer":{"@type":"Answer","text":"Di solito ogni 3-4 settimane, ma la frequenza viene personalizzata sui tuoi obiettivi."}
+      },
+      {
+        "@type":"Question","name":"È previsto un piano alimentare?",
+        "acceptedAnswer":{"@type":"Answer","text":"Sì, ricevi un piano adattato ai tuoi gusti, stile di vita e obiettivi, con ricette e lista della spesa."}
+      }
+    ]
   }
   </script>
 
@@ -66,16 +89,15 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     @media (max-width:900px){.grid-3{grid-template-columns:1fr}}
     .muted{color:var(--muted)}
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0;font-size:14px;color:var(--muted)}
-    .whatsapp{position:fixed;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#0b0f10;border-radius:999px;padding:12px 14px;font-weight:800;box-shadow:var(--shadow)}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .cookie-banner{position:fixed;left:12px;right:12px;bottom:12px;background:var(--card);border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);border-radius:14px;padding:14px;display:none;gap:10px;align-items:center;z-index:60}
-    .cookie-banner.show{display:flex;flex-wrap:wrap;justify-content:space-between}
-    .cookie-banner p{margin:0 10px 0 0;color:var(--muted)}
-    .cookie-banner .actions{display:flex;gap:8px}
-    .cookie-banner button{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
-    .cookie-accept{background:#22c55e;color:#0b0f10;font-weight:800}
-    .cookie-decline{background:transparent;color:#e6f0ec}
+    .about{display:grid;grid-template-columns:1fr 1.2fr;gap:16px;align-items:center}
+    @media (max-width:900px){.about{grid-template-columns:1fr}}
+    .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;background:#0d1513;border-top:1px solid rgba(255,255,255,.08);padding:10px 14px;z-index:60}
+    .sticky-cta .row{display:flex;gap:10px;justify-content:space-between}
+    @media (max-width:820px){.sticky-cta{display:block}}
+    .testi{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:900px){.testi{grid-template-columns:1fr}}
+    .faq details{background:var(--card);border-radius:12px;padding:14px;margin-bottom:10px}
+    .faq summary{cursor:pointer;font-weight:800}
   </style>
 </head>
 <body>
@@ -87,8 +109,9 @@
       <nav aria-label="Primaria">
         <ul>
           <li><a href="#servizi">Servizi</a></li>
-          <li><a href="#metodo">Metodo</a></li>
+          <li><a href="#chi-sono">Chi sono</a></li>
           <li><a href="#prezzi">Prezzi</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contatti">Contatti</a></li>
         </ul>
       </nav>
@@ -98,8 +121,9 @@
       <button class="menu-btn" id="closeMenu" style="margin-bottom:12px">Chiudi</button>
       <ul>
         <li><a href="#servizi" onclick="closeDrawer()">Servizi</a></li>
-        <li><a href="#metodo" onclick="closeDrawer()">Metodo</a></li>
+        <li><a href="#chi-sono" onclick="closeDrawer()">Chi sono</a></li>
         <li><a href="#prezzi" onclick="closeDrawer()">Prezzi</a></li>
+        <li><a href="#faq" onclick="closeDrawer()">FAQ</a></li>
         <li><a href="#contatti" onclick="closeDrawer()">Contatti</a></li>
       </ul>
     </div>
@@ -119,7 +143,7 @@
       <div class="card">
         <picture>
           <source srcset="images/cover.webp" type="image/webp">
-          <img src="images/cover.jpg" alt="Piatto bilanciato con verdure, cereali e proteine">
+          <img src="images/cover.jpg" alt="Piatto bilanciato con verdure, cereali e proteine" width="1200" height="630" loading="eager" fetchpriority="high">
         </picture>
       </div>
     </section>
@@ -130,30 +154,51 @@
         <article class="card">
           <picture>
             <source srcset="images/family_cooking.webp" type="image/webp">
-            <img src="images/family_cooking.jpg" alt="Famiglia che prepara un'insalata">
+            <img src="images/family_cooking.jpg" alt="Famiglia che prepara un'insalata" loading="lazy">
           </picture>
           <h3>Educazione alimentare</h3>
           <p class="muted">Percorsi pratici per creare abitudini sane e durature.</p>
         </article>
         <article class="card">
-          <img src="images/cover.jpg" alt="Pasto equilibrato">
+          <img src="images/cover.jpg" alt="Pasto equilibrato" loading="lazy">
           <h3>Piani personalizzati</h3>
           <p class="muted">Menu settimanali, spesa guidata e ricette semplici.</p>
         </article>
         <article class="card">
-          <img src="images/cover.jpg" alt="Nutrizione sportiva">
+          <img src="images/cover.jpg" alt="Nutrizione sportiva" loading="lazy">
           <h3>Nutrizione sportiva</h3>
           <p class="muted">Strategie per allenamento, recupero e gara.</p>
         </article>
       </div>
     </section>
 
-    <section id="metodo">
-      <h2>Come lavoro</h2>
-      <div class="grid-3">
-        <div class="card"><strong>1ª visita</strong><p>Anamnesi completa, misure e obiettivi. Consegna del piano entro 48h.</p></div>
-        <div class="card"><strong>Follow-up</strong><p>Verifica progressi, aggiustamenti pratici, educazione alimentare.</p></div>
-        <div class="card"><strong>Supporto</strong><p>Chat/Email per dubbi tra una visita e l’altra. Materiale didattico incluso.</p></div>
+    <section id="chi-sono">
+      <h2>Chi sono</h2>
+      <div class="about">
+        <div class="card">
+          <picture>
+            <source srcset="images/headshot.webp" type="image/webp">
+            <img src="images/headshot.jpg" alt="Foto professionale del Dott. Roberto Soave" style="aspect-ratio:4/5;object-fit:cover;">
+          </picture>
+        </div>
+        <div class="card">
+          <p><strong>Dott. Roberto Soave – Dietista Nutrizionista</strong></p>
+          <ul>
+            <li>Iscritto all'Albo dei Dietisti</li>
+            <li>Master in Nutrizione Clinica</li>
+            <li>Esperienza in educazione alimentare per famiglie e sportivi</li>
+          </ul>
+          <p class="muted">Approccio pratico, sostenibile e basato su evidenze scientifiche.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonianze">
+      <h2>Recensioni</h2>
+      <div class="testi">
+        <blockquote class="card"><p>«Piano chiaro e sostenibile, -6 kg in 8 settimane senza stress.»</p><footer class="muted">— Marta B.</footer></blockquote>
+        <blockquote class="card"><p>«Ottimi consigli per la maratona: energia e recupero al top!»</p><footer class="muted">— Luca S.</footer></blockquote>
+        <blockquote class="card"><p>«Finalmente niente diete restrittive, ma educazione alimentare reale.»</p><footer class="muted">— Giulia R.</footer></blockquote>
       </div>
     </section>
 
@@ -164,6 +209,13 @@
         <div class="card"><h3>Follow-up</h3><p style="font-size:28px;font-weight:900">€ 50</p><p class="muted">Controllo e aggiornamento piano (30-40 min).</p></div>
         <div class="card"><h3>Pacchetto 3 mesi</h3><p style="font-size:28px;font-weight:900">€ 240</p><p class="muted">1ª visita + 3 follow-up. Supporto via chat.</p></div>
       </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <details><summary>Fate consulenze online?</summary><p class="muted">Sì, tramite videochiamata: riceverai gli stessi materiali e supporto.</p></details>
+      <details><summary>Ogni quanto avvengono i follow-up?</summary><p class="muted">Di solito ogni 3-4 settimane, ma dipende dagli obiettivi.</p></details>
+      <details><summary>Serve un’impegnativa?</summary><p class="muted">No, puoi prenotare direttamente dal sito o via WhatsApp.</p></details>
     </section>
 
     <section id="contatti">
@@ -187,13 +239,10 @@
     </section>
   </main>
 
-  <a class="whatsapp" id="cta-wa-float" href="https://wa.me/393382809121" aria-label="Scrivi su WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
-
-  <div id="cookie" class="cookie-banner" role="dialog" aria-live="polite">
-    <p>Usiamo cookie analitici (Google Analytics 4) per migliorare il sito. Puoi accettare o rifiutare.</p>
-    <div class="actions">
-      <button class="cookie-decline" id="cookie-decline">Rifiuta</button>
-      <button class="cookie-accept" id="cookie-accept">Accetta</button>
+  <div class="sticky-cta">
+    <div class="wrap row">
+      <a class="btn btn-primary" href="tel:+393382809121">Chiama 338 280 9121</a>
+      <a class="btn btn-secondary" href="https://wa.me/393382809121" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
@@ -201,8 +250,17 @@
     <div class="wrap">© <span id="year"></span> Dott. Roberto Soave – Dietista Nutrizionista – <a href="#">Privacy</a></div>
   </footer>
 
+  <!-- Consent banner + GA4 -->
+  <div id="cookie" class="cookie-banner" role="dialog" aria-live="polite" style="display:none">
+    <p>Usiamo cookie analitici (GA4) per migliorare il sito. Puoi accettare o rifiutare.</p>
+    <div class="actions">
+      <button class="cookie-decline" id="cookie-decline">Rifiuta</button>
+      <button class="cookie-accept" id="cookie-accept">Accetta</button>
+    </div>
+  </div>
+
   <script>
-    // Mobile drawer
+    // Drawer mobile
     const drawer = document.getElementById('drawer');
     const openBtn = document.getElementById('openMenu');
     const closeBtn = document.getElementById('closeMenu');
@@ -210,16 +268,14 @@
     openBtn?.addEventListener('click',()=>{drawer.classList.add('open');openBtn.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false')});
     closeBtn?.addEventListener('click',closeDrawer);
 
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- Analytics with consent (GA4) ---
-    const GA_ID = "G-XXXXXXXXXX"; // <-- Sostituisci con il tuo ID GA4 (es. G-ABC1234567)
+    // Cookie consent + GA4
+    const GA_ID = "G-XXXXXXXXXX";
     const cookieBanner = document.getElementById('cookie');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const declineBtn = document.getElementById('cookie-decline');
-
     function loadGA(){
-      if (!GA_ID || GA_ID === "G-XXXXXXXXXX") return; // placeholder: evita errori
+      if (!GA_ID || GA_ID === "G-XXXXXXXXXX") return;
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
@@ -230,35 +286,21 @@
       gtag('js', new Date());
       gtag('config', GA_ID, { anonymize_ip: true });
     }
-
-    function showBanner(){
-      cookieBanner.classList.add('show');
-    }
-
-    function hideBanner(){
-      cookieBanner.classList.remove('show');
-    }
-
+    function showBanner(){cookieBanner.style.display='flex'}
+    function hideBanner(){cookieBanner.style.display='none'}
     const cons = localStorage.getItem('analytics_consent');
     if (cons === 'granted') { loadGA(); }
     else if (cons === 'denied') { /* do nothing */ }
     else { showBanner(); }
+    document.getElementById('cookie-accept')?.addEventListener('click',()=>{localStorage.setItem('analytics_consent','granted');hideBanner();loadGA();});
+    document.getElementById('cookie-decline')?.addEventListener('click',()=>{localStorage.setItem('analytics_consent','denied');hideBanner();});
 
-    acceptBtn?.addEventListener('click', () => { localStorage.setItem('analytics_consent','granted'); hideBanner(); loadGA(); });
-    declineBtn?.addEventListener('click', () => { localStorage.setItem('analytics_consent','denied'); hideBanner(); });
-
-    // --- Event Tracking (invocato solo se GA è presente) ---
+    // Event tracking helpers
     function track(ev, params={}){ if (typeof gtag === 'function') gtag('event', ev, params); }
-
-    document.getElementById('cta-call')?.addEventListener('click', () => track('click_call', {location:'hero'}));
-    document.getElementById('cta-book')?.addEventListener('click', () => track('click_book', {location:'hero'}));
-    document.getElementById('cta-call-2')?.addEventListener('click', () => track('click_call', {location:'contact'}));
-    document.getElementById('cta-wa')?.addEventListener('click', () => track('click_whatsapp', {location:'contact'}));
-    document.getElementById('cta-wa-float')?.addEventListener('click', () => track('click_whatsapp', {location:'floating'}));
-
-    document.getElementById('lead-form')?.addEventListener('submit', () => { 
-      track('lead_submit', {method:'formspree'}); 
-    });
+    document.getElementById('cta-call')?.addEventListener('click',()=>track('click_call',{location:'hero'}));
+    document.getElementById('cta-book')?.addEventListener('click',()=>track('click_book',{location:'hero'}));
+    document.getElementById('cta-call-2')?.addEventListener('click',()=>track('click_call',{location:'contact'}));
+    document.getElementById('cta-wa')?.addEventListener('click',()=>track('click_whatsapp',{location:'contact'}));
   </script>
 </body>
 </html>
